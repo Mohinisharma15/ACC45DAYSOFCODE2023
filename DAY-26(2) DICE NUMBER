@@ -1,0 +1,44 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void getdata(int arr[3]){
+    for(int i=0; i<3; i++){
+        cin>>arr[i];
+    }
+}
+int func(int arr[3]){
+    int i=0,sum=0;
+    while(i!=3){
+        sum=(sum*10)+arr[i];
+        i++;
+    }
+    return sum;
+}
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	for(int i=0; i<t; i++){
+	    int arr1[3],arr2[3];
+	    getdata(arr1);
+	    getdata(arr2);
+	    sort(arr1,arr1+3,greater<int>());
+	    sort(arr2,arr2+3,greater<int>());
+	    int c1=func(arr1);
+	    int c2=func(arr2);
+	    
+	    if(c1>c2){
+	        cout<<"Alice"<<endl;
+	    }
+	    else if(c2>c1){
+	        cout<<"Bob"<<endl;
+	    }
+	    else{
+	        cout<<"Tie"<<endl;
+	    }
+	    
+	    
+	}
+	return 0;
+}
