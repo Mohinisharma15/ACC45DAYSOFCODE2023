@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+void getdata(int arr[],int num){
+    for(int i=0; i<num; i++){
+        cin>>arr[i];
+    }
+}
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	for(int i=0; i<t; i++){
+	    int num;
+	    cin>>num;
+	    int arr1[num],arr2[num];
+	    getdata(arr1,num);
+	    getdata(arr2,num);
+	    int count=0;
+	    for(int i=0; i<num; i++){
+	        if(i==0){
+	            if(arr2[i]<=arr1[i]){
+	                count++;
+	                
+	            }
+	        }
+	        else if(arr2[i]<=(abs(arr1[i]-arr1[i-1]))){
+	            count++;
+	            
+	        }
+	    }
+	    cout<<count<<endl;
+	    
+	}
+	return 0;
+}
